@@ -1,0 +1,17 @@
+def rotar_lista(lista, n, direccion):
+    if not lista:
+        return lista
+
+    n = n % len(lista)
+
+    if direccion == "izquierda":
+        return lista[n:] + lista[:n]
+
+    elif direccion == "derecha":
+        return lista[-n:] + lista[:-n]
+
+numeros = [1, 2, 3, 4, 5]
+
+print("Original: ", numeros)
+print("Izquierda (2):", rotar_lista(numeros, 2, "izquierda"))
+print("Derecha (2):  ", rotar_lista(numeros, 2, "derecha"))
